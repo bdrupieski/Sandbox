@@ -27,3 +27,30 @@ val f = for (i <- ab1) yield i
 f.equals(ab1)
 f.eq(ab1)
 
+for (elem <- ab1) yield 2 * elem
+for (elem <- ab1 if elem % 2 == 0) yield 2 * elem
+
+ab1.filter(x => x % 2 == 0).map(x => x * 2)
+ab1.filter(_ % 2 == 0).map(_ * 2)
+
+ab1.sum
+ab1.max
+ab1.sortWith((x, y) => x < y)
+ab1.sortBy(x => x)
+
+val arr = Array[Int](1, 2, 6, 5, 4)
+scala.util.Sorting.quickSort(arr)
+arr
+
+ab1.mkString(" . ")
+val asStrings = ab1.map(x => x.toString)
+String.join(" . ", asStrings: _*)
+
+import collection.JavaConversions.asJavaIterable
+// isn't ArrayBuffer[String] an Iterable[CharSequence]? Why is asJavaIterable needed?
+String.join(" . ", asStrings)
+
+val matrix = Array.ofDim[Double](2, 3)
+matrix(1)(2) = 42
+matrix(1)
+
