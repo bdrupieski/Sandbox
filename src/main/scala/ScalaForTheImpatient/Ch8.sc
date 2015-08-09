@@ -56,3 +56,47 @@ val fred = new AbstractPerson {
   override val name: String = "Fred"
 }
 fred.name
+
+class Creature {
+  val range: Int = 10
+  val env: Array[Int] = new Array[Int](range)
+
+  override def toString = s"Creature(range:$range, env:(${env.mkString(" ")}))"
+}
+
+class Ant extends Creature {
+  override val range: Int = 2
+}
+
+val c = new Creature
+val a = new Ant
+
+class Bug extends { override val range: Int = 3 } with Creature
+val b = new Bug
+
+val nullVal: Null = null
+val someString: String = nullVal
+
+class Item(val description: String, val price: Double) {
+
+  def canEqual(other: Any): Boolean = other.isInstanceOf[Item]
+
+  override def equals(other: Any): Boolean = other match {
+    case that: Item =>
+      (that canEqual this) &&
+        description == that.description &&
+        price == that.price
+    case _ => false
+  }
+
+  override def hashCode(): Int = {
+    val state = Seq(description, price)
+    state.map(_.hashCode()).foldLeft(0)((a, b) => 31 * a + b)
+  }
+}
+
+val item1 = new Item("Banana", 0.49)
+val item2 = new Item("Banana", 0.49)
+item1 == item2
+item1 eq item2
+item1 equals item2
