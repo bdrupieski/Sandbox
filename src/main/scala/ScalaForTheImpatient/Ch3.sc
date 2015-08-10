@@ -47,7 +47,6 @@ val asStrings = ab1.map(x => x.toString)
 String.join(" . ", asStrings: _*)
 
 import collection.JavaConversions.asJavaIterable
-// isn't ArrayBuffer[String] an Iterable[CharSequence]? Why is asJavaIterable needed?
 String.join(" . ", asStrings)
 
 val matrix = Array.ofDim[Double](2, 3)
