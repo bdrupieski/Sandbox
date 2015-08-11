@@ -102,3 +102,16 @@ val rect = new Rectangle(new Point(0.0, 0.0), new Point(2.0, 1.0))
 rect.centerPoint
 val circ = new Circle(new Point(3.5, 3.5))
 circ.centerPoint
+
+class Square(x: Int, y: Int, width: Int) extends java.awt.Rectangle(x, y, width, width) {
+  def this(width: Int) {
+    this(0, 0, width)
+  }
+  def this() {
+    this(0, 0, 0)
+  }
+}
+
+val square1 = new Square(1, 2, 3)
+val square2 = new Square(4)
+val square3 = new Square()
