@@ -1,4 +1,4 @@
-package ScalaForTheImpatient.Ch8
+package ScalaForTheImpatient
 
 import java.io._
 
