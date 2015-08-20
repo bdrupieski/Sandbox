@@ -37,3 +37,18 @@ fib().filter(_ % 2 == 0).take(10).force
 def fib2(): Stream[Int] = 0 #:: fib2.scanLeft(1)(_ + _)
 
 fib2.filter(_ % 2 == 0).take(10).force
+
+val fib3 = new Iterator[Int] {
+  var a = 0
+  var b = 1
+  def hasNext = true
+  def next(): Int = {
+    val next = a
+    val temp = b
+    b = a + b
+    a = temp
+    next
+  }
+}
+
+fib3.filter(_ % 2 == 0).take(10).toArray
