@@ -29,3 +29,11 @@ names.map(x => (x.toUpperCase, x.toLowerCase)).flatten(x => x.productIterator.to
 names.flatMap(x => Vector[String](x.toUpperCase, x.toLowerCase))
 
 "-3+4".collect { case '+' => 1 ; case '-' => -1 }
+
+def fib(a: Int = 0, b: Int = 1): Stream[Int] = Stream.cons(a, fib(b, a+b))
+
+fib().filter(_ % 2 == 0).take(10).force
+
+def fib2(): Stream[Int] = 0 #:: fib2.scanLeft(1)(_ + _)
+
+fib2.filter(_ % 2 == 0).take(10).force
