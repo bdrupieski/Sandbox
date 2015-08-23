@@ -38,3 +38,25 @@ arr match {
   case Array(0, _*) => "0... "
   case _ => "umm"
 }
+for ((k, "") <- sys.props)
+  println(k)
+abstract class Amount
+case class Dollar(value: Double) extends Amount
+case class Currency(value: Double, unit: String) extends Amount
+case object Nothing extends Amount
+
+val amt: Amount = Dollar(42)
+amt match {
+  case Dollar(v) => "$" + v
+  case Currency(v, u) => "oops"
+  case Nothing => ""
+}
+
+val currencyAmt: Currency = Currency(scala.math.Pi, "pies")
+currencyAmt.copy(value = 22)
+
+val l = List[Int](1, 2, 3)
+l match {
+  case h :: t => println(h + " " + t)
+}
+
