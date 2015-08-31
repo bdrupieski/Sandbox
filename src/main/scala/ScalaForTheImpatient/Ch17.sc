@@ -1,3 +1,5 @@
+import scala.runtime.RichInt
+
 class MyPair[T <: Comparable[T]](val first: T, val second: T) {
   def smaller: T = if (first.compareTo(second) < 0) first else second
 }
@@ -30,3 +32,36 @@ class PairWithViewBound[T <% Comparable[T]](val first: T, val second: T) {
   def smaller: T = if (first.compareTo(second) < 0) first else second
 }
 new PairWithViewBound(1, 2).smaller
+
+val d: RichInt = Predef.intWrapper(3)
+d.compare(4)
+
+class PairWithOrderedViewBound[T <% Ordered[T]](val first: T, val second: T) {
+  def smaller: T = if (first.compareTo(second) < 0) first else second
+}
+new PairWithOrderedViewBound[Int](1, 2).smaller
+
+class PairWithContextBound[T : Ordering](val first: T, val second: T) {
+  def smaller(implicit ord: Ordering[T]) = {
+    if (ord.compare(first, second) < 0) first else second
+  }
+}
+new PairWithContextBound[Int](1, 2).smaller
+
+def makeArray[T : Manifest](first: T, second: T) = {
+  Array(first, second)
+}
+makeArray(1, 2).getClass.getCanonicalName
+
+class PairWithTypeConstraint[T](val first: T, val second: T) {
+  def smaller(implicit ev: T <:< Ordered[T]) = {
+    if (first < second) first else second
+  }
+}
+new PairWithTypeConstraint[Integer](1, 2)
+
+class CovariantPair[+T](val first: T, val second: T)
+
+def makeFriends(p: CovariantPair[Person]) = { p.first }
+makeFriends(new CovariantPair[Person](new Person(), new Person()))
+makeFriends(new CovariantPair[Student](new Student(), new Student()))
