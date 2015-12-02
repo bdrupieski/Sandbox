@@ -1,4 +1,4 @@
-package JavaSe8ForTheReallyImpatient;
+package JavaSe8ForTheReallyImpatient.Ch1;
 
 import java.util.Arrays;
 import java.util.Comparator;

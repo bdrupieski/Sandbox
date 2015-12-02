@@ -1,4 +1,4 @@
-package JavaSe8ForTheReallyImpatient;
+package JavaSe8ForTheReallyImpatient.Ch1;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
