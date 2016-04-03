@@ -6,6 +6,10 @@ public class HelloWorldClient {
     public static void main(String[] args) {
         ZMQ.Context context = ZMQ.context(1);
 
+        System.out.println(String.format("Version string: %s, Version int: %d",
+                ZMQ.getVersionString(),
+                ZMQ.getFullVersion()));
+
         //  Socket to talk to server
         System.out.println("Connecting to hello world server…");
 
