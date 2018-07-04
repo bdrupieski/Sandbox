@@ -1,10 +1,15 @@
-﻿namespace Sandbox.Dapper
+﻿using DapperExtensions.Sql;
+
+namespace Sandbox.Dapper
 {
     class Program
     {
         static void Main(string[] args)
         {
-            BasicPostgresStuff.DoIt();
+            DapperExtensions.DapperExtensions.SqlDialect = new PostgreSqlDialect();
+
+            var someDapperStuff = new SomeDapperStuff();
+            someDapperStuff.DoSomeStuff();
         }
     }
 }
