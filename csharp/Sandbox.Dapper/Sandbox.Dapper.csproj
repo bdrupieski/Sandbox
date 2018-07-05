@@ -10,7 +10,7 @@
     <PackageReference Include="ConsoleDump" Version="0.7.0" />
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="DapperExtensions" Version="1.6.3" />
-    <PackageReference Include="Npgsql" Version="4.0.0" />
+    <PackageReference Include="Npgsql" Version="4.0.1" />
   </ItemGroup>
 
 </Project>

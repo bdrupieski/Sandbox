@@ -8,7 +8,7 @@ namespace Sandbox.Dapper
         {
             DapperExtensions.DapperExtensions.SqlDialect = new PostgreSqlDialect();
 
-            new SomeDapperExtensionsStuff().DoSomeStuff();
+            new SomePostgresCustomTypeStuff().DoSomeStuff();
         }
     }
 }
