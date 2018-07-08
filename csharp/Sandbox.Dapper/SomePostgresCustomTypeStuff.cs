@@ -68,10 +68,9 @@ insert into location_active (locationid, start, "end") values (3, '2018-02-01', 
 
         public override void DoSomeStuff()
         {
-            // TODO: upgrade to npgsql 4.0.2 when it's released to fix this https://github.com/npgsql/npgsql/issues/1983
-            //ShowLocations();
+            ShowLocations();
             TryQueryingCustomType();
-            //JoinOnUnnestedCollectionOfCustomTypes();
+            JoinOnUnnestedCollectionOfCustomTypes();
         }
 
         private void ShowLocations()
