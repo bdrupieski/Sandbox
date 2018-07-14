@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Redis", "Sandbox.Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Analyzers", "Sandbox.Analyzers\Sandbox.Analyzers.csproj", "{1D3B7199-3E27-4FB5-86D2-B388E934F35A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Dapper", "Sandbox.Dapper\Sandbox.Dapper.csproj", "{82B3CB32-C497-4822-896C-E3784D4B507A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Dapper", "Sandbox.Dapper\Sandbox.Dapper.csproj", "{82B3CB32-C497-4822-896C-E3784D4B507A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.VisualizeCircuitBreaker", "Sandbox.VisualizeCircuitBreaker\Sandbox.VisualizeCircuitBreaker.csproj", "{FB3E41C1-CBC7-4C7B-B859-D50C77078366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{82B3CB32-C497-4822-896C-E3784D4B507A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82B3CB32-C497-4822-896C-E3784D4B507A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82B3CB32-C497-4822-896C-E3784D4B507A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3E41C1-CBC7-4C7B-B859-D50C77078366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3E41C1-CBC7-4C7B-B859-D50C77078366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3E41C1-CBC7-4C7B-B859-D50C77078366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3E41C1-CBC7-4C7B-B859-D50C77078366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
