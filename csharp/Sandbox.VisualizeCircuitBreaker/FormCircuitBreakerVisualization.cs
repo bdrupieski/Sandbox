@@ -17,7 +17,6 @@ namespace Sandbox.VisualizeCircuitBreaker
         public FormCircuitBreakerVisualization()
         {
             InitializeComponent();
-            healthCountUserControlConsolidated.ActLikeConsolidatedHealthCount = true;
             StartNewSimulation();
 
             timerCheckOnCircuitBreaker.Tick += TimerCheckOnCircuitBreaker_Tick;
@@ -64,8 +63,8 @@ namespace Sandbox.VisualizeCircuitBreaker
             var simulationState = _circuitBreakerSimulation.GetSimulationState();
 
             MakeSureHealthCountUserControlQueueIsBuiltAndHasTheRightNumberOfThingsInIt(simulationState);
-            UpdateCircuitStateLabel(simulationState.CircuitState);
-            healthCountUserControlConsolidated.UpdateBasedOnHealthCount(_circuitBreakerSimulation, simulationState.ConsolidatedHealthCount);
+            UpdateCircuitStateLabel(simulationState);
+            UpdateConsolidatedHealthCountView(simulationState);
 
             var healthCountsAndControls = _healthCountQueue.ZipLongest(simulationState.HealthCounts, (control, count) => (control, count));
             foreach (var (healthCountControl, healthCount) in healthCountsAndControls)
@@ -74,11 +73,20 @@ namespace Sandbox.VisualizeCircuitBreaker
             }
         }
 
-        private void UpdateCircuitStateLabel(CircuitState circuitState)
+        private void UpdateConsolidatedHealthCountView(SimulationState simulationState)
+        {
+            labelTotalSuccessCount.Text = simulationState.ConsolidatedHealthCount?.Successes.ToString();
+            labelTotalFailureCount.Text = simulationState.ConsolidatedHealthCount?.Failures.ToString();
+
+            labelTotalFailureRate.Text = simulationState.FailureRatio?.ToString("#.##");
+        }
+
+        private void UpdateCircuitStateLabel(SimulationState simulationState)
         {
             string text = string.Empty;
             Color textColor = Color.Black;
 
+            var circuitState = simulationState.CircuitState;
             if (circuitState == CircuitState.Closed)
             {
                 text = "Closed";
@@ -94,7 +102,9 @@ namespace Sandbox.VisualizeCircuitBreaker
             }
             else if (circuitState == CircuitState.Open)
             {
-                text = "Open";
+                var timeRemainingOpen = (simulationState.BlockedUntil - DateTime.UtcNow).TotalSeconds;
+
+                text = $"Open {timeRemainingOpen:#.##}";
                 textColor = Color.Red;
             }
 

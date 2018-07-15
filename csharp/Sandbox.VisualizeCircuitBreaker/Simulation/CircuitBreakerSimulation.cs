@@ -49,6 +49,7 @@ namespace Sandbox.VisualizeCircuitBreaker.Simulation
                 ConsolidatedHealthCount = BuildConsolidatedHealthCount(healthCounts),
                 HealthCounts = healthCounts,
                 BucketCount = bucketCount,
+                BlockedUntil = GetBlockedUntil(),
             };
         }
 
@@ -61,6 +62,14 @@ namespace Sandbox.VisualizeCircuitBreaker.Simulation
                 healthCounts.Sum(x => x.Successes), 
                 healthCounts.Sum(x => x.Failures), 
                 healthCounts.Last().StartedAt);
+        }
+
+        private DateTime GetBlockedUntil()
+        {
+            var controller = _circuitBreaker.GetFieldValue("_breakerController");
+            var blockedTill = (long)controller.GetFieldValue("_blockedTill");
+
+            return new DateTime(blockedTill, DateTimeKind.Utc);
         }
 
         private (List<HealthCount> healthCounts, int totalPossibleBuckets) GetHealthCounts()

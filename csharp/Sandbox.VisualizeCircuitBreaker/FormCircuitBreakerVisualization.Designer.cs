@@ -49,7 +49,9 @@
             this.tableLayoutPanelHealthCounts = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxConsolidatedHealthCount = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.healthCountUserControlConsolidated = new Sandbox.VisualizeCircuitBreaker.HealthCountUserControl();
+            this.labelTotalSuccessCount = new System.Windows.Forms.Label();
+            this.labelTotalFailureCount = new System.Windows.Forms.Label();
+            this.labelTotalFailureRate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFailureThreshold)).BeginInit();
             this.groupBoxSimulationParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSamplingDurationSeconds)).BeginInit();
@@ -255,7 +257,7 @@
             this.groupBoxCircuitBreakerState.Controls.Add(this.tableLayoutPanelHealthCounts);
             this.groupBoxCircuitBreakerState.Location = new System.Drawing.Point(12, 93);
             this.groupBoxCircuitBreakerState.Name = "groupBoxCircuitBreakerState";
-            this.groupBoxCircuitBreakerState.Size = new System.Drawing.Size(828, 123);
+            this.groupBoxCircuitBreakerState.Size = new System.Drawing.Size(905, 149);
             this.groupBoxCircuitBreakerState.TabIndex = 9;
             this.groupBoxCircuitBreakerState.TabStop = false;
             this.groupBoxCircuitBreakerState.Text = "Circuit Breaker Health Counts (buckets of time and what happened during that time" +
@@ -271,18 +273,20 @@
             this.tableLayoutPanelHealthCounts.Name = "tableLayoutPanelHealthCounts";
             this.tableLayoutPanelHealthCounts.RowCount = 1;
             this.tableLayoutPanelHealthCounts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelHealthCounts.Size = new System.Drawing.Size(822, 104);
+            this.tableLayoutPanelHealthCounts.Size = new System.Drawing.Size(899, 130);
             this.tableLayoutPanelHealthCounts.TabIndex = 10;
             // 
             // groupBoxConsolidatedHealthCount
             // 
-            this.groupBoxConsolidatedHealthCount.Controls.Add(this.healthCountUserControlConsolidated);
-            this.groupBoxConsolidatedHealthCount.Location = new System.Drawing.Point(846, 93);
+            this.groupBoxConsolidatedHealthCount.Controls.Add(this.labelTotalFailureRate);
+            this.groupBoxConsolidatedHealthCount.Controls.Add(this.labelTotalFailureCount);
+            this.groupBoxConsolidatedHealthCount.Controls.Add(this.labelTotalSuccessCount);
+            this.groupBoxConsolidatedHealthCount.Location = new System.Drawing.Point(923, 93);
             this.groupBoxConsolidatedHealthCount.Name = "groupBoxConsolidatedHealthCount";
-            this.groupBoxConsolidatedHealthCount.Size = new System.Drawing.Size(151, 123);
+            this.groupBoxConsolidatedHealthCount.Size = new System.Drawing.Size(74, 149);
             this.groupBoxConsolidatedHealthCount.TabIndex = 10;
             this.groupBoxConsolidatedHealthCount.TabStop = false;
-            this.groupBoxConsolidatedHealthCount.Text = "Consolidated Health Count";
+            this.groupBoxConsolidatedHealthCount.Text = "Total";
             // 
             // groupBox2
             // 
@@ -296,21 +300,43 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Circuit Breaker State";
             // 
-            // healthCountUserControlConsolidated
+            // labelTotalSuccessCount
             // 
-            this.healthCountUserControlConsolidated.ActLikeConsolidatedHealthCount = false;
-            this.healthCountUserControlConsolidated.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.healthCountUserControlConsolidated.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.healthCountUserControlConsolidated.Location = new System.Drawing.Point(3, 16);
-            this.healthCountUserControlConsolidated.Name = "healthCountUserControlConsolidated";
-            this.healthCountUserControlConsolidated.Size = new System.Drawing.Size(145, 104);
-            this.healthCountUserControlConsolidated.TabIndex = 0;
+            this.labelTotalSuccessCount.AutoSize = true;
+            this.labelTotalSuccessCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSuccessCount.ForeColor = System.Drawing.Color.SeaGreen;
+            this.labelTotalSuccessCount.Location = new System.Drawing.Point(6, 29);
+            this.labelTotalSuccessCount.Name = "labelTotalSuccessCount";
+            this.labelTotalSuccessCount.Size = new System.Drawing.Size(210, 24);
+            this.labelTotalSuccessCount.TabIndex = 0;
+            this.labelTotalSuccessCount.Text = "TOTAL_SUCCESSES";
+            // 
+            // labelTotalFailureCount
+            // 
+            this.labelTotalFailureCount.AutoSize = true;
+            this.labelTotalFailureCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalFailureCount.ForeColor = System.Drawing.Color.Red;
+            this.labelTotalFailureCount.Location = new System.Drawing.Point(6, 56);
+            this.labelTotalFailureCount.Name = "labelTotalFailureCount";
+            this.labelTotalFailureCount.Size = new System.Drawing.Size(186, 24);
+            this.labelTotalFailureCount.TabIndex = 1;
+            this.labelTotalFailureCount.Text = "TOTAL_FAILURES";
+            // 
+            // labelTotalFailureRate
+            // 
+            this.labelTotalFailureRate.AutoSize = true;
+            this.labelTotalFailureRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalFailureRate.Location = new System.Drawing.Point(7, 93);
+            this.labelTotalFailureRate.Name = "labelTotalFailureRate";
+            this.labelTotalFailureRate.Size = new System.Drawing.Size(180, 25);
+            this.labelTotalFailureRate.TabIndex = 2;
+            this.labelTotalFailureRate.Text = "FAILURE_RATE";
             // 
             // FormCircuitBreakerVisualization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 228);
+            this.ClientSize = new System.Drawing.Size(1009, 254);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxConsolidatedHealthCount);
             this.Controls.Add(this.groupBoxCircuitBreakerState);
@@ -333,6 +359,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinimumThroughput)).EndInit();
             this.groupBoxCircuitBreakerState.ResumeLayout(false);
             this.groupBoxConsolidatedHealthCount.ResumeLayout(false);
+            this.groupBoxConsolidatedHealthCount.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -359,8 +386,10 @@
         private System.Windows.Forms.GroupBox groupBoxCircuitBreakerState;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelHealthCounts;
         private System.Windows.Forms.GroupBox groupBoxConsolidatedHealthCount;
-        private HealthCountUserControl healthCountUserControlConsolidated;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label labelTotalFailureCount;
+        private System.Windows.Forms.Label labelTotalSuccessCount;
+        private System.Windows.Forms.Label labelTotalFailureRate;
     }
 }
 

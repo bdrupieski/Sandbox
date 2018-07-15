@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Polly.CircuitBreaker;
 
 namespace Sandbox.VisualizeCircuitBreaker.Simulation
@@ -9,6 +10,10 @@ namespace Sandbox.VisualizeCircuitBreaker.Simulation
         public IEnumerable<HealthCount> HealthCounts { get; set; }
         public int BucketCount { get; set; }
         public HealthCount ConsolidatedHealthCount { get; set; }
-        public double FailureRatio => (double)ConsolidatedHealthCount.Failures / ConsolidatedHealthCount.Total;
+        public DateTime BlockedUntil { get; set; }
+
+        public double? FailureRatio => ConsolidatedHealthCount == null || ConsolidatedHealthCount.Total == 0 ? 
+            (double?)null : 
+            (double)ConsolidatedHealthCount.Failures / ConsolidatedHealthCount.Total;
     }
 }

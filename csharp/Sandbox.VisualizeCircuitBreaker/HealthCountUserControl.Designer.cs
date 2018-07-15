@@ -31,6 +31,7 @@
             this.labelSuccesses = new System.Windows.Forms.Label();
             this.labelFailures = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
+            this.labelTimeDifference = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelSuccesses
@@ -61,20 +62,31 @@
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.Location = new System.Drawing.Point(3, 59);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(113, 24);
+            this.labelTime.Size = new System.Drawing.Size(112, 24);
             this.labelTime.TabIndex = 2;
-            this.labelTime.Text = "TIME HERE";
+            this.labelTime.Text = "TIME_LEFT";
+            // 
+            // labelTimeDifference
+            // 
+            this.labelTimeDifference.AutoSize = true;
+            this.labelTimeDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimeDifference.Location = new System.Drawing.Point(3, 86);
+            this.labelTimeDifference.Name = "labelTimeDifference";
+            this.labelTimeDifference.Size = new System.Drawing.Size(160, 20);
+            this.labelTimeDifference.TabIndex = 3;
+            this.labelTimeDifference.Text = "TIME_DIFFERENCE";
             // 
             // HealthCountUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.labelTimeDifference);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelFailures);
             this.Controls.Add(this.labelSuccesses);
             this.Name = "HealthCountUserControl";
-            this.Size = new System.Drawing.Size(86, 93);
+            this.Size = new System.Drawing.Size(66, 115);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Label labelSuccesses;
         private System.Windows.Forms.Label labelFailures;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelTimeDifference;
     }
 }
