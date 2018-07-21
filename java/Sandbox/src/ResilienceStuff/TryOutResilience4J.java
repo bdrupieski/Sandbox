@@ -14,6 +14,7 @@ public class TryOutResilience4J {
     public static void main(String[] args) {
         var resilienceStuff = new ResilienceStuff();
         resilienceStuff.retryStuff();
+        resilienceStuff.circuitBreakerStuff();
     }
 }
 
@@ -37,8 +38,8 @@ class ResilienceStuff {
 
         var circuitBreakerConfig = CircuitBreakerConfig
                 .custom()
-                .failureRateThreshold(0.80f)
-                .ringBufferSizeInClosedState(100)
+                .failureRateThreshold(0.95f)
+                .ringBufferSizeInClosedState(10)
                 .recordFailure(throwable -> throwable instanceof SomeCustomException)
                 .waitDurationInOpenState(Duration.ofSeconds(10))
                 .build();
@@ -52,6 +53,25 @@ class ResilienceStuff {
             System.out.println(MessageFormat.format("Finished successfully! The result was {0}", result));
         } catch (SomeCustomException e) {
             System.out.println("well you don't always win");
+        }
+    }
+
+    void circuitBreakerStuff() {
+        var supplier = CircuitBreaker.decorateSupplier(circuitBreaker, () -> workThatFailsSometimes(0.50f));
+        supplier = Retry.decorateSupplier(retry, supplier);
+
+        circuitBreaker.getEventPublisher().onSuccess(event -> {
+            var msg = MessageFormat.format("success! took this long {0}", event.getElapsedDuration());
+            System.out.println(msg);
+        });
+
+        circuitBreaker.getEventPublisher().onError(event -> {
+            var msg = MessageFormat.format("error! took this long {0}", event.getElapsedDuration());
+            System.out.println(msg);
+        });
+
+        for (int i = 0; i < 100; i++) {
+            supplier.get();
         }
     }
 
