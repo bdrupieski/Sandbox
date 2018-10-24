@@ -1,10 +1,10 @@
-﻿namespace Sandbox.Console
+﻿namespace Sandbox.SmallConsoleStuff
 {
     class Program
     {
         static void Main(string[] args)
         {
-            PollyStuff.DoIt();
+            BenchmarkRefIntPerformance.DoIt();
         }
     }
 }

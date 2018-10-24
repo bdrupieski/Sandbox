@@ -1,7 +1,7 @@
 ﻿using System;
 using PhoneNumbers;
 
-namespace Sandbox.Console
+namespace Sandbox.SmallConsoleStuff
 {
     /// <summary>
     /// Trying out the PhoneNumberUtil package.

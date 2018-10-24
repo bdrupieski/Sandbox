@@ -1,7 +1,7 @@
 ﻿using System;
 using Polly;
 
-namespace Sandbox.Console
+namespace Sandbox.SmallConsoleStuff
 {
     public static class PollyStuff
     {

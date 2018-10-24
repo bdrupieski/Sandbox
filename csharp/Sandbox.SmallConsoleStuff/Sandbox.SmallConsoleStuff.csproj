@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0327F44E-D3B2-4C60-8DE7-AD816F1469DC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sandbox.Console</RootNamespace>
-    <AssemblyName>Sandbox.Console</AssemblyName>
+    <RootNamespace>Sandbox.SmallConsoleStuff</RootNamespace>
+    <AssemblyName>Sandbox.SmallConsoleStuff</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -84,11 +84,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BenchmarkRefIntPerformance.cs" />
     <Compile Include="MakeRequestThenCancelItStuff.cs" />
     <Compile Include="PhoneNumberUtilStuff.cs" />
     <Compile Include="PollyStuff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefIntFastDateTimeFormatBenchmark\FastDateTimeFormatHardcodedIndexes.cs" />
+    <Compile Include="RefIntFastDateTimeFormatBenchmark\FastDateTimeFormatNoRef.cs" />
+    <Compile Include="RefIntFastDateTimeFormatBenchmark\FastDateTimeFormatRef.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

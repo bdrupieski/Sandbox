@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using Nito.AsyncEx.Synchronous;
 
-namespace Sandbox.Console
+namespace Sandbox.SmallConsoleStuff
 {
     /// <summary>
     /// Trying out making an HTTP request using <see cref="HttpClient"/> and then canceling
