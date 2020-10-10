@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2043
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.SmallConsoleStuff", "Sandbox.SmallConsoleStuff\Sandbox.SmallConsoleStuff.csproj", "{0327F44E-D3B2-4C60-8DE7-AD816F1469DC}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox.Semantics3WithoutUsingTheirPackage", "SandBox.Semantics3WithoutUsingTheirPackage\SandBox.Semantics3WithoutUsingTheirPackage.csproj", "{EEDAB3A9-DCE5-434C-B36A-5C8744EB16A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.JsonSerializationBenchmark", "Sandbox.JsonSerializationBenchmark\Sandbox.JsonSerializationBenchmark.csproj", "{7A687DBE-E7F3-4A4F-AE52-2502E9660D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.NetCore.ConsoleStuff", "Sandbox.NetCore.ConsoleStuff\Sandbox.NetCore.ConsoleStuff.csproj", "{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{7A687DBE-E7F3-4A4F-AE52-2502E9660D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A687DBE-E7F3-4A4F-AE52-2502E9660D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A687DBE-E7F3-4A4F-AE52-2502E9660D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
