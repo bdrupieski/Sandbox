@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30523.141
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.SmallConsoleStuff", "Sandbox.SmallConsoleStuff\Sandbox.SmallConsoleStuff.csproj", "{0327F44E-D3B2-4C60-8DE7-AD816F1469DC}"
 EndProject
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox.Semantics3WithoutUs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.JsonSerializationBenchmark", "Sandbox.JsonSerializationBenchmark\Sandbox.JsonSerializationBenchmark.csproj", "{7A687DBE-E7F3-4A4F-AE52-2502E9660D45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.NetCore.ConsoleStuff", "Sandbox.NetCore.ConsoleStuff\Sandbox.NetCore.ConsoleStuff.csproj", "{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.NetCore.ConsoleStuff", "Sandbox.NetCore.ConsoleStuff\Sandbox.NetCore.ConsoleStuff.csproj", "{66C99DBE-BF05-4FA0-8FF2-031ECA82F597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
